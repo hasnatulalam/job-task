@@ -7,19 +7,19 @@ const ManageOrderCard = ({ detail }) => {
 
   //delete a package
   const handleDeleteProduct = (id) => {
-    const proceed = window.confirm("Are you sure to delete the product?");
+    const proceed = window.confirm("Are you sure to add the product?");
     if (proceed) {
-      const url = `http://localhost:5000/allorder/${id}`;
+      const url = `http://localhost:5000/addproduct/${id}`;
 
       fetch(url, {
-        method: "DELETE",
+        method: "POST",
       })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
           if (data.deletedCount > 0) {
             Swal.fire(
-              'Deleted Successfully !'
+              'added Successfully !'
             )
           }
         });
