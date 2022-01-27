@@ -1,57 +1,55 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import AuthProvider from "./Assets/Context/AuthProvider";
-// import PrivateRoute from "./Common/utilityComponents/PrivateRoute"
-import Home from "./Pages/Home/Home";
-import Login from './Pages/Login/Login.js'
-import Register from './Pages/Register/Register'
-import NotFound from './Pages/NotFound/NotFound';
-import Products from "./Pages/Products/Products";
-import PrivateRoute from './Common/utilityComponents/PrivateRoute'
-import Order from './Pages/Order/Order'
-import Dashboard from './Pages/DashBoard/DashBoard'
-import About from "./Pages/About/About";
-import AOS from 'aos';
-import 'aos/dist/aos.css'; 
-AOS.init();
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./components/Home/Home";
+import SignUp from "./components/SignUp/SignUp";
+import SignIn from "./components/SignIn/SignIn";
+import BlogDetails from "./components/BlogDetails/BlogDetails";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Dashboard from "./components/Dashboard/Dashboard";
+import HomeDashboard from "./components/DashboardComponents/DashboardHome/HomeDashboard";
+import MyBlogs from "./components/DashboardComponents/MyBlogs/MyBlogs";
+import AddBlog from "./components/DashboardComponents/AddBlog/AddBlog";
+import ManageBlogs from "./components/DashboardComponents/ManageBlogs/ManageBlogs";
+import MakeAdmin from "./components/DashboardComponents/MakeAdmin/MakeAdmin";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="*" element={<NotFound />} />
+          <Route
+            path="/blogs/:id"
+            element={
+              <PrivateRoute>
+                <BlogDetails />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/dashboard"
+            element={
+              <PrivateRoute>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          >
+            <Route path={`/dashboard`} element={<HomeDashboard />} />
+            <Route exact path={`/dashboard/myBlogs`} element={<MyBlogs />} />
+            <Route exact path={`/dashboard/addBlog`} element={<AddBlog />} />
+            <Route exact path={`/dashboard/manageBlogs`} element={<ManageBlogs />} />
+            <Route exact path={`/dashboard/makeAdmin`} element={<MakeAdmin />} />
           </Route>
-          <Route exact path="/home">
-            <Home></Home>
-          </Route>
-          <Route exact path="/products">
-            <Products></Products>
-          </Route>
-          <Route exact path="/about">
-            <About></About>
-          </Route>
-          <PrivateRoute exact path="/products/:productid">
-            <Order></Order>
-          </PrivateRoute>
-          <PrivateRoute path="/dashboard">
-            <Dashboard></Dashboard>
-          </PrivateRoute>
-            <Route exact path="/login">
-            <Login></Login>
-          </Route>
-            <Route exact path="/register">
-            <Register></Register>
-          </Route>
-          <Route path="*">
-            <NotFound></NotFound>
-          </Route>
-        </Switch>
-      </Router>
-    </AuthProvider>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
-export default App; 
+export default App;

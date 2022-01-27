@@ -1,23 +1,10 @@
-import { createStore, applyMiddleware  , combineReducers } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import thunk from 'redux-thunk';
-import { alertsReducer } from './reducers/alertsReducer';
-import { carsReducer } from './reducers/carsReducer';
-import { bookingsReducer } from './reducers/bookingsReducer';
-const composeEnhancers = composeWithDevTools({});
+import { configureStore } from '@reduxjs/toolkit';
+import travelSlice from './slice';
 
-const rootReducer = combineReducers({
-   carsReducer,
-   alertsReducer,
-   bookingsReducer,
+const store = configureStore({
+    reducer: {
+        allBlogs: travelSlice
+    }
 })
 
-const store = createStore(
-  rootReducer,
-  composeEnhancers(
-    applyMiddleware(thunk)
-   
-  )
-);
-
-export default store
+export default store;
