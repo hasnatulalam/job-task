@@ -18,7 +18,7 @@ const Dashboard = () => {
   // check admin
   useEffect(() => {
     setIsLoading(true);
-    fetch(`http://localhost:5000/users/${user?.email}`)
+    fetch(`https://pacific-crag-05570.herokuapp.com/users/${user?.email}`)
       .then(res => res.json())
       .then(data => {
         if (data.role === 'admin') {
@@ -55,17 +55,20 @@ const Dashboard = () => {
                     <>
                       <li>
                         <NavLink end to="/dashboard/myBlogs">
+                          <i className="fas fa-newspaper me-2"></i>
                           My Blogs
                         </NavLink>
                       </li>
                       <li>
 
                         <NavLink end to="/dashboard/addBlog">
+                          <i className="fas fa-pencil-alt me-2"></i>
                           Write Blog
                         </NavLink>
                       </li>
                       <li>
                         <NavLink end to="/home">
+                          <i className="fas fa-home me-2"></i>
                           Back To Home
                         </NavLink>
                       </li>
@@ -75,21 +78,25 @@ const Dashboard = () => {
                     <>
                       <li>
                         <NavLink end to="/dashboard/manageBlogs">
+                          <i className="fas fa-newspaper me-2"></i>
                           Manage Blogs
                         </NavLink>
                       </li>
                       <li>
                         <NavLink end to="/dashboard/addBlog">
+                          <i className="fas fa-pencil-alt me-2"></i>
                           Write Blog
                         </NavLink>
                       </li>
                       <li>
                         <NavLink end to="/dashboard/makeAdmin">
+                          <i className="fas fa-user me-2"></i>
                           Make an Admin
                         </NavLink>
                       </li>
                       <li>
                         <NavLink end to="/home">
+                          <i className="fas fa-home me-2"></i>
                           Back To Home
                         </NavLink>
                       </li>
@@ -160,6 +167,7 @@ const Dashboard = () => {
                 </div>
 
                 <button className="signin ms-4" onClick={logOut}>
+
                   Logout
                 </button>
               </div>

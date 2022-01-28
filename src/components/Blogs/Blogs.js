@@ -15,7 +15,7 @@ const Blogs = () => {
   const size = 10;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/blogs?page=${page}&&size=${size}`)
+    fetch(`https://pacific-crag-05570.herokuapp.com/blogs?page=${page}&&size=${size}`)
       .then((res) => res.json())
       .then((data) => {
         dispatch(setBlogs(data.blogs));

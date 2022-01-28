@@ -73,7 +73,7 @@ const useFirebase = () => {
 
   const saveUser = (name, email, action) => {
     const newUser = { name, email };
-    fetch(`http://localhost:5000/users`, {
+    fetch(`https://pacific-crag-05570.herokuapp.com/users`, {
       method: action,
       headers: {
         'content-type': 'application/json'

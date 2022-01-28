@@ -7,10 +7,10 @@ import useFirebase from "../../hooks/useFirebase";
 
 const SignIn = () => {
   const [userInfo, setUserInfo] = useState({});
-  const { googleSignIn, SignInUser, setUser, setIsLoading, saveUser, authError, isLoading} = useFirebase();
+  const { googleSignIn, SignInUser, setUser, setIsLoading, saveUser, authError, isLoading } = useFirebase();
 
-    const location = useLocation();
-    const navigate = useNavigate();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const googleLogIn = () => {
     setIsLoading(true);
@@ -27,8 +27,8 @@ const SignIn = () => {
       .finally(() => {
         setIsLoading(false);
       });
-    }
-    
+  }
+
   const handleBlur = (e) => {
     const field = e.target.name;
     const value = e.target.value;
@@ -54,7 +54,7 @@ const SignIn = () => {
               <img style={{ width: "100px" }} src={logo} alt="logo" />
             </div>
             <div className="form-area">
-            {authError && <Alert variant="danger">{authError}</Alert>}
+              {authError && <Alert variant="danger">{authError}</Alert>}
               <h4
                 style={{
                   color: "#2980b9",
@@ -87,8 +87,8 @@ const SignIn = () => {
                   <Spinner animation="border" />
                 ) : (
                   <button type="submit" className="mt-2 securityBtn">
-                  Sign in
-                </button>
+                    Sign in
+                  </button>
                 )}
                 <Link
                   to="/signup"
@@ -122,7 +122,7 @@ const SignIn = () => {
           <Col xs={12} md={12} lg={6}>
             <img
               style={{ width: "100%" }}
-              src="https://accounts.formaloo.net/static/assets/image/signup.svg"
+              src="https://i.ibb.co/tL5bRsY/sign-up-concept-illustration-114360-7885.jpg"
               alt=""
             />
           </Col>

@@ -9,13 +9,13 @@ const ManageBlogs = () => {
   const blogs = useSelector((state) => state.allBlogs.allBlogs);
 
   useEffect(() => {
-    fetch('http://localhost:5000/Allblog')
+    fetch('https://pacific-crag-05570.herokuapp.com/Allblog')
       .then(res => res.json())
       .then(data => dispatch(setAllBlogs(data)))
   }, [blogs])
 
   const approvedBlog = (id) => {
-    fetch(`http://localhost:5000/blog/${id}`, {
+    fetch(`https://pacific-crag-05570.herokuapp.com/blog/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -38,7 +38,7 @@ const ManageBlogs = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`http://localhost:5000/deleteBlog/${id}`, {
+        fetch(`https://pacific-crag-05570.herokuapp.com/deleteBlog/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

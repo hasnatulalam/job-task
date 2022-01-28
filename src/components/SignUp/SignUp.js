@@ -50,7 +50,7 @@ const SignUp = () => {
               <img style={{ width: "100px" }} src={logo} alt="logo" />
             </div>
             <div className="form-area">
-            {authError && <Alert variant="danger">{authError}</Alert>}
+              {authError && <Alert variant="danger">{authError}</Alert>}
               <h4
                 style={{
                   color: "#2980b9",
@@ -95,8 +95,8 @@ const SignUp = () => {
                   <Spinner animation="border" />
                 ) : (
                   <button type="submit" className="mt-2 securityBtn">
-                  Sign up
-                </button>
+                    Sign up
+                  </button>
                 )}
                 <Link
                   to="/signin"
@@ -124,7 +124,7 @@ const SignUp = () => {
           <Col xs={12} md={12} lg={6}>
             <img
               style={{ width: "100%" }}
-              src="https://accounts.formaloo.net/static/assets/image/signup.svg"
+              src="https://i.ibb.co/tL5bRsY/sign-up-concept-illustration-114360-7885.jpg"
               alt=""
             />
           </Col>

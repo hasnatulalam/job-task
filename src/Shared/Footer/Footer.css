@@ -1,6 +1,7 @@
 .footer-part {
-    background: #232F3E;
-    color: #fff;
+     background: #232F3E; 
+   /*  background: #44484c; */
+    color: white;
     padding: 60px 0 40px;
 }
 

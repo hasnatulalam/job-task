@@ -34,7 +34,7 @@ const AddBlog = () => {
     data.time = time;
     data.email = user.email;
 
-    fetch("http://localhost:5000/addBlog", {
+    fetch("https://pacific-crag-05570.herokuapp.com/addBlog", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -63,6 +63,7 @@ const AddBlog = () => {
                 className="form-control my-2"
                 type="text"
                 id="title"
+                placeholder="Kaptai Tour"
                 {...register("title")}
                 required
               />
@@ -91,16 +92,19 @@ const AddBlog = () => {
                 className="form-control my-2"
                 type="text"
                 id="name"
+                placeholder="Hasib"
                 {...register("name")}
                 required
               />
               <label htmlFor="address" className="fw-bold">
                 Traveler Address
+
               </label>
               <input
                 className="form-control my-2"
                 type="text"
                 id="address"
+                placeholder="Rangunia"
                 {...register("address")}
                 required
               />
@@ -111,6 +115,7 @@ const AddBlog = () => {
                 className="form-control my-2"
                 type="text"
                 id="image"
+                placeholder="https://i.ibb.co/jrMPqVq/3.jpg"
                 {...register("image")}
                 required
               />
@@ -124,6 +129,7 @@ const AddBlog = () => {
                 className="form-control my-2"
                 type="text"
                 id="location"
+                placeholder="Kaptai"
                 {...register("location")}
                 required
               />
@@ -134,6 +140,7 @@ const AddBlog = () => {
                 className="form-control my-2"
                 type="number"
                 id="expense"
+                placeholder="200"
                 {...register("expense")}
                 required
               />
@@ -154,6 +161,7 @@ const AddBlog = () => {
                 className="form-control my-2"
                 id="description"
                 {...register("description")}
+                placeholder="Khagrachari is located in the Chittagong hill tracts, and is popular among hikers and trekkers."
                 style={{ height: "150px", resize: "none" }}
                 required
               />

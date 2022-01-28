@@ -13,9 +13,9 @@ const Footer = () => {
                             <h5>contact us</h5>
                             <p>It is a long established fact that reader will distract by the readable content of a page</p>
                             <ul>
-                                <li>218 Fifth Avenue, HeavenTower NewYork City</li>
+                                <li>Rangunia Chittagong</li>
                                 <li>(+12) 123 456 5890</li>
-                                <li>Hot-Support@coznize.com</li>
+                                <li>royelagencysupport@gmail.com</li>
                             </ul>
                         </div>
                     </Col>
@@ -72,7 +72,7 @@ const Footer = () => {
                     </Col>
                 </Row>
                 <div className="copyright">
-                    <p>&copy; Copyright 2021 Angel Travel agency Rights Reserved.</p>
+                    <p>&copy; Copyright 2021 Royel Travel agency Rights Reserved.</p>
                 </div>
             </Container>
         </div>

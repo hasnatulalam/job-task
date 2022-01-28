@@ -26,15 +26,17 @@ const Navigation = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <div className="nav-menu">
-                <NavLink to="/home">Home</NavLink>
-                {user?.email ? <NavLink to="/dashboard">Dashboard</NavLink> : ""}
+                <NavLink to="/home"> <i className="fas fa-home me-2"></i>Home</NavLink>
+                {user?.email ? <NavLink to="/dashboard"> <i className="fas fa-bars me-2"></i>Dashboard</NavLink> : ""}
                 <>
-                {user?.email ? <button onClick={logOut} className="signin authBtn">
-                  Sign Out
-                </button> : <button onClick={handleSignin} className="signin authBtn">
-                  Sign In
-                </button>}
-                {user?.email ? <small className="displayName" style={{color: "#2980b9", fontSize: "17px", fontWeight: "bold", marginLeft: "7px"}}>{user?.displayName}</small> : ""}
+                  {user?.email ? <button onClick={logOut} className="signin authBtn">
+                    <i className="fas fa-sign-out-alt me-2"></i>
+                    Sign Out
+                  </button> : <button onClick={handleSignin} className="signin authBtn">
+                    <i className="fas fa-sign-out-alt me-2"></i>
+                    Sign In
+                  </button>}
+                  {user?.email ? <small className="displayName" style={{ color: "#2980b9", fontSize: "17px", fontWeight: "bold", marginLeft: "7px" }}>  <i className="fas fa-user-tie me-2"></i>{user?.displayName}</small> : ""}
                 </>
               </div>
             </Nav>
